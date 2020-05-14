@@ -1,0 +1,11 @@
+version: "3.7"
+services:
+  laravel-tests:
+    build: ./apache-postgres
+    image: laravel-tests
+    container_name: laravel-tests
+    volumes:
+      - ./000-default.conf:/etc/apache2/sites-available/000-default.conf
+      - ../:/var/www/html
+    ports:
+      - 80:80
